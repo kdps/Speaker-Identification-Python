@@ -16,7 +16,8 @@ We have considered MFCC with “tuned parameters” as the primary feature and d
 > Documentation file and screenshots in **documentation/** folder.
 
 # Repo Description:
-**SampleData/** - consists test audio files. (custom dataset)
+**SampleData/** - consists test audio files. (custom dataset) 
+**WAV / Sampling rate 16m000hz / Mono Channel
 
 **Speakers_models/** - consists .gmm model trained files. 1 file for each speaker .( self made custom dataset)
 
@@ -27,6 +28,7 @@ We have considered MFCC with “tuned parameters” as the primary feature and d
 **speaker_models/** - consists .gmm model trained files. 1 file for each speaker .( 34 speaker's model training file pff Voxforge dataset)
 
 **trainingData/** - consists training audio files. (custom datatset)
+**WAV / Sampling rate 16m000hz / Mono Channel
 
 **Note:-** Due to oversize, only very few voice samples are kept in the **Dataset Folders**. viz. SampleData, trainingData, development_set. Otherwise all remaining folder's contents are available.
 
