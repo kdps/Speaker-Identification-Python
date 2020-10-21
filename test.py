@@ -1,5 +1,5 @@
 import os
-import cPickle
+import _pickle as cPickle
 import numpy as np
 from scipy.io.wavfile import read
 from featureextraction import extract_features
@@ -26,7 +26,7 @@ gmm_files = [os.path.join(modelpath,fname) for fname in
               os.listdir(modelpath) if fname.endswith('.gmm')]
 
 #Load the Gaussian gender Models
-models    = [cPickle.load(open(fname,'r')) for fname in gmm_files]
+models    = [cPickle.load(open(fname,'rb')) for fname in gmm_files]
 speakers   = [fname.split("/")[-1].split(".gmm")[0] for fname 
               in gmm_files]
 
@@ -50,13 +50,14 @@ if take == 1:
         	scores = np.array(gmm.score(vector))
         	log_likelihood[i] = scores.sum()
     
+	# TODO [when argmax is not identified]
     	winner = np.argmax(log_likelihood)
     	print "\tdetected as - ", speakers[winner]
 
     	time.sleep(1.0)
 elif take == 0:
 	test_file = "testSamplePath.txt"        
-	file_paths = open(test_file,'r')
+	file_paths = open(test_file,'rb')
 
 
 	# Read the test directory and get the list of test audio files 
